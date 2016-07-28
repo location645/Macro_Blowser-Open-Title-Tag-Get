@@ -2,7 +2,7 @@ Attribute VB_Name = "Module27"
 Sub Test()
 
 
-'IE‚ğŠJ‚­‚æ‚¤‚Ì‚â‚Â(open ‚Æ‚©”í‚é‚Æ•Ï”‚Ég‚¦‚È‚¢)
+'IEã‚’é–‹ã
 
 Dim A As InternetExplorer
 Set A = CreateObject("InternetExplorer.Application")
@@ -11,24 +11,24 @@ A.Visible = True
 
 
 
-'ƒZƒ‹‚©‚ç‚ÌURL“ü—Í
+'ã‚»ãƒ«ã‹ã‚‰ã®URLå…¥åŠ›
 
 Dim IE As String
 
 IE = Range("B1")
 
 
-'Šm”F—pBox
+'ç¢ºèªç”¨Box
 MsgBox IE
 
 
 
-' [•Ï”IE]‚É“ü‚Á‚Ä‚¢‚éURL ‚ğ@@[•Ï”A]‚ÌƒIƒuƒWƒFƒNƒg‚ÅŠJ‚­
+' [å¤‰æ•°IE]ã«å…¥ã£ã¦ã„ã‚‹URL ã‚’ã€€ã€€[å¤‰æ•°A]ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§é–‹ã
 A.navigate IE
 
 
 
-'IE‚ªŠJ‚­‚Ü‚Å‚Ì‘Ò‹@\•¶
+'IEãŒé–‹ãã¾ã§ã®å¾…æ©Ÿæ§‹æ–‡
 
 Do While A.Busy = True Or A.readyState < READYSTATE_COMPLETE
 
@@ -41,15 +41,15 @@ Loop
 Dim Doc As HTMLDocument
 Set Doc = A.document
 
-'“ü—ÍƒtƒH[ƒ€—p
+'å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ç”¨
 Dim User As String, Pass As String
 User = Range("B2")
 Pass = Range("B3")
 
 
-Doc.getElementById("id").Value = User 'id="user_login"‚Éƒ†[ƒU[–¼‚ğ“ü—Í
-Doc.getElementById("password").Value = Pass  'id="user_pass"‚ÉƒpƒXƒ[ƒh‚ğ“ü—Í
-Doc.getElementById("form1").submit 'ƒtƒH[ƒ€‚Ì“à—e‚ğ‘—M
+Doc.getElementById("id").Value = User 'id="user_login"ã«ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å…¥åŠ›
+Doc.getElementById("password").Value = Pass  'id="user_pass"ã«ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›
+Doc.getElementById("form1").submit 'ãƒ•ã‚©ãƒ¼ãƒ ã®å†…å®¹ã‚’é€ä¿¡
 
 
 End Sub
